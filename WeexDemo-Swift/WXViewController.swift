@@ -19,11 +19,13 @@ class WXViewController: UIViewController {
         instance = WXSDKInstance()
         instance?.viewController = self
         instance?.frame = view.frame
+        weak var weakSelf = self
         instance?.onCreate = {view in
+            
             guard let v = view else {
                 return
             }
-            self.view.addSubview(v)
+            weakSelf?.view.addSubview(v)
         }
         instance?.onFailed = {error in
             print(error ?? "")
