@@ -3,25 +3,30 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2ABD80BD01DF0CB87AA367FA /* libPods-WeexDemo-Swift.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D6C5F578B6B18D41FF17CCBD /* libPods-WeexDemo-Swift.a */; };
 		941E0B5C228018220018BCAE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941E0B5B228018220018BCAE /* AppDelegate.swift */; };
-		941E0B5E228018220018BCAE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941E0B5D228018220018BCAE /* ViewController.swift */; };
-		941E0B61228018220018BCAE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 941E0B5F228018220018BCAE /* Main.storyboard */; };
 		941E0B63228018240018BCAE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 941E0B62228018240018BCAE /* Assets.xcassets */; };
-		941E0B66228018240018BCAE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 941E0B64228018240018BCAE /* LaunchScreen.storyboard */; };
+		941E0B7222801C7C0018BCAE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 941E0B7122801C7C0018BCAE /* LaunchScreen.storyboard */; };
+		941E0B7422801CF00018BCAE /* WXViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941E0B7322801CF00018BCAE /* WXViewController.swift */; };
+		941E0B76228021DA0018BCAE /* WXEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941E0B75228021DA0018BCAE /* WXEngine.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		941E0B58228018220018BCAE /* WeexDemo-Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WeexDemo-Swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		941E0B5B228018220018BCAE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		941E0B5D228018220018BCAE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		941E0B60228018220018BCAE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		941E0B62228018240018BCAE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		941E0B65228018240018BCAE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		941E0B67228018240018BCAE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		941E0B6D22801C250018BCAE /* WeexDemo-Swift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WeexDemo-Swift-Bridging-Header.h"; sourceTree = "<group>"; };
+		941E0B7122801C7C0018BCAE /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		941E0B7322801CF00018BCAE /* WXViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WXViewController.swift; sourceTree = "<group>"; };
+		941E0B75228021DA0018BCAE /* WXEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WXEngine.swift; sourceTree = "<group>"; };
+		D6C5F578B6B18D41FF17CCBD /* libPods-WeexDemo-Swift.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WeexDemo-Swift.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E029401606D785DF1B401BA1 /* Pods-WeexDemo-Swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeexDemo-Swift.release.xcconfig"; path = "Target Support Files/Pods-WeexDemo-Swift/Pods-WeexDemo-Swift.release.xcconfig"; sourceTree = "<group>"; };
+		E551F3576681111B8C5512C4 /* Pods-WeexDemo-Swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeexDemo-Swift.debug.xcconfig"; path = "Target Support Files/Pods-WeexDemo-Swift/Pods-WeexDemo-Swift.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +34,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2ABD80BD01DF0CB87AA367FA /* libPods-WeexDemo-Swift.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3620F5B9C6D1FE94B685EEC8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D6C5F578B6B18D41FF17CCBD /* libPods-WeexDemo-Swift.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		941E0B4F228018220018BCAE = {
 			isa = PBXGroup;
 			children = (
 				941E0B5A228018220018BCAE /* WeexDemo-Swift */,
 				941E0B59228018220018BCAE /* Products */,
+				D1406C85D24E29D7859D1D89 /* Pods */,
+				3620F5B9C6D1FE94B685EEC8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -55,13 +71,23 @@
 			isa = PBXGroup;
 			children = (
 				941E0B5B228018220018BCAE /* AppDelegate.swift */,
-				941E0B5D228018220018BCAE /* ViewController.swift */,
-				941E0B5F228018220018BCAE /* Main.storyboard */,
+				941E0B7322801CF00018BCAE /* WXViewController.swift */,
+				941E0B75228021DA0018BCAE /* WXEngine.swift */,
+				941E0B7122801C7C0018BCAE /* LaunchScreen.storyboard */,
 				941E0B62228018240018BCAE /* Assets.xcassets */,
-				941E0B64228018240018BCAE /* LaunchScreen.storyboard */,
 				941E0B67228018240018BCAE /* Info.plist */,
+				941E0B6D22801C250018BCAE /* WeexDemo-Swift-Bridging-Header.h */,
 			);
 			path = "WeexDemo-Swift";
+			sourceTree = "<group>";
+		};
+		D1406C85D24E29D7859D1D89 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E551F3576681111B8C5512C4 /* Pods-WeexDemo-Swift.debug.xcconfig */,
+				E029401606D785DF1B401BA1 /* Pods-WeexDemo-Swift.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +97,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 941E0B6A228018240018BCAE /* Build configuration list for PBXNativeTarget "WeexDemo-Swift" */;
 			buildPhases = (
+				8584E12E95288A523F119D39 /* [CP] Check Pods Manifest.lock */,
 				941E0B54228018220018BCAE /* Sources */,
 				941E0B55228018220018BCAE /* Frameworks */,
 				941E0B56228018220018BCAE /* Resources */,
+				EC9B72AF8345B44547BC06F7 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -96,6 +124,7 @@
 				TargetAttributes = {
 					941E0B57228018220018BCAE = {
 						CreatedOnToolsVersion = 10.2.1;
+						LastSwiftMigration = 1020;
 					};
 				};
 			};
@@ -122,44 +151,67 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				941E0B66228018240018BCAE /* LaunchScreen.storyboard in Resources */,
+				941E0B7222801C7C0018BCAE /* LaunchScreen.storyboard in Resources */,
 				941E0B63228018240018BCAE /* Assets.xcassets in Resources */,
-				941E0B61228018220018BCAE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8584E12E95288A523F119D39 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WeexDemo-Swift-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EC9B72AF8345B44547BC06F7 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WeexDemo-Swift/Pods-WeexDemo-Swift-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WeexDemo-Swift/Pods-WeexDemo-Swift-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WeexDemo-Swift/Pods-WeexDemo-Swift-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		941E0B54228018220018BCAE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				941E0B5E228018220018BCAE /* ViewController.swift in Sources */,
+				941E0B7422801CF00018BCAE /* WXViewController.swift in Sources */,
+				941E0B76228021DA0018BCAE /* WXEngine.swift in Sources */,
 				941E0B5C228018220018BCAE /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		941E0B5F228018220018BCAE /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				941E0B60228018220018BCAE /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		941E0B64228018240018BCAE /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				941E0B65228018240018BCAE /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		941E0B68228018240018BCAE /* Debug */ = {
@@ -280,8 +332,10 @@
 		};
 		941E0B6B228018240018BCAE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E551F3576681111B8C5512C4 /* Pods-WeexDemo-Swift.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "WeexDemo-Swift/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -290,6 +344,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "xminug.WeexDemo-Swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "WeexDemo-Swift/WeexDemo-Swift-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -297,8 +353,10 @@
 		};
 		941E0B6C228018240018BCAE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E029401606D785DF1B401BA1 /* Pods-WeexDemo-Swift.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "WeexDemo-Swift/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -307,6 +365,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "xminug.WeexDemo-Swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "WeexDemo-Swift/WeexDemo-Swift-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
