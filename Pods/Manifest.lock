@@ -1,0 +1,26 @@
+PODS:
+  - BindingX (1.0.3):
+    - WeexPluginLoader
+    - WeexSDK
+  - WeexPluginLoader (0.0.1.9.1):
+    - WeexSDK
+  - WeexSDK (0.20.1)
+
+DEPENDENCIES:
+  - BindingX
+  - WeexSDK
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - BindingX
+    - WeexPluginLoader
+    - WeexSDK
+
+SPEC CHECKSUMS:
+  BindingX: b3c6c1c5dcd8e50277cfc5daad09d7010c227524
+  WeexPluginLoader: 85c1304f8ba29864e58531614a0acfeceef1b85c
+  WeexSDK: ced3f2ef2f0cb48d1d76fd2f03c645572c632d21
+
+PODFILE CHECKSUM: 72f4f68f9e066a47632f8f11e67b694e9a85ae92
+
+COCOAPODS: 1.7.0.beta.2
