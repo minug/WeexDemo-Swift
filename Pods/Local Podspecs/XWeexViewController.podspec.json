@@ -1,0 +1,27 @@
+{
+  "name": "XWeexViewController",
+  "version": "0.1.0",
+  "summary": "A short description of XWeexViewController.",
+  "description": "A simple weex ViewController",
+  "homepage": "https://github.com/minug/XWeexViewController",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "minug": "xminug@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/minug/XWeexViewController.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "XWeexViewController/Classes/**/*",
+  "dependencies": {
+    "WeexSDK": [
+
+    ]
+  }
+}
