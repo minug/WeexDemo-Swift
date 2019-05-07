@@ -1,0 +1,6 @@
+use_frameworks!
+target 'XWeexViewController_Tests' do
+  pod 'XWeexViewController', :path => '../'
+  
+  
+end
