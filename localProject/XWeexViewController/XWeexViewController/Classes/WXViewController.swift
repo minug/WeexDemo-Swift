@@ -15,7 +15,7 @@ protocol WXViewControllerDelegate:NSObjectProtocol{
     func renderFinish(viewController:WXViewController,view:UIView)
     func renderOncreate(viewController:WXViewController,view:UIView)
     
-    func stratRender(url:URL)
+    func stratRender(viewController:WXViewController,url:URL)
 }
 
 public class WXViewController: UIViewController {
@@ -60,6 +60,7 @@ public class WXViewController: UIViewController {
         instance?.renderFinish = { view in
             
         }
+        delegate?.stratRender(viewController: self, url: url);
         instance?.render(with: url)
     }
     @objc func refreshClick(item:UIBarButtonItem){
