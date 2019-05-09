@@ -9,9 +9,24 @@
 import UIKit
 import WeexSDK
 
+protocol WXViewControllerDelegate:NSObjectProtocol{
+    func renderFailed(viewController:WXViewController,error:Error)
+    func renderJSRuntimeException(viewController:WXViewController,jsException:WXJSExceptionInfo)
+    func renderFinish(viewController:WXViewController,view:UIView)
+    func renderOncreate(viewController:WXViewController,view:UIView)
+    
+    func stratRender(url:URL)
+}
+
 public class WXViewController: UIViewController {
     var instance : WXSDKInstance?
-    var url:URL?;
+    var url:URL?
+    weak var delegate:WXViewControllerDelegate?
+    
+    public convenience init(url:URL) {
+        self.init()
+        self.url = url
+    }
 
     func render(url:URL){
         instance?.destroy()
@@ -22,20 +37,28 @@ public class WXViewController: UIViewController {
         instance?.frame = view.frame
         weak var weakSelf = self
         instance?.onCreate = {view in
-
             guard let v = view else {
                 return
+            }
+            if (weakSelf?.delegate != nil ){
+                weakSelf?.delegate?.renderOncreate(viewController: weakSelf!, view: view!)
             }
             weakSelf?.view.addSubview(v)
         }
         instance?.onFailed = {error in
             print(error ?? "")
+            if (weakSelf?.delegate != nil && error != nil){
+                weakSelf?.delegate?.renderFailed(viewController: weakSelf!, error: error!);
+            }
         }
-        instance?.onJSRuntimeException = { exception in
-            print(exception ?? "")
+        instance?.onJSRuntimeException = { jsException in
+            if(weakSelf?.delegate != nil && jsException != nil){
+                weakSelf?.delegate?.renderJSRuntimeException(viewController: weakSelf!, jsException: jsException!);
+            }
+            print(jsException ?? "")
         }
         instance?.renderFinish = { view in
-
+            
         }
         instance?.render(with: url)
     }
@@ -48,10 +71,11 @@ public class WXViewController: UIViewController {
     override public func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.white
-        let navItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.refresh, target: self, action: #selector(refreshClick(item:)));
-        navigationItem.rightBarButtonItem = navItem
-        url = URL(string: "http://localhost:8081/dist/index.js")
-        render(url: url!)
+        if (self.url != nil){
+            let navItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.refresh, target: self, action: #selector(refreshClick(item:)));
+            navigationItem.rightBarButtonItem = navItem
+            render(url: url!)
+        }
     }
 
 }
