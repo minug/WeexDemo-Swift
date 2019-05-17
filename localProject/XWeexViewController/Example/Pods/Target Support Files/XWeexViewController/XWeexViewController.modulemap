@@ -1,6 +1,0 @@
-framework module XWeexViewController {
-  umbrella header "XWeexViewController-umbrella.h"
-
-  export *
-  module * { export * }
-}

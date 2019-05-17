@@ -1,6 +1,0 @@
-module Pods_WeexDemo_Swift {
-  umbrella header "Pods-WeexDemo-Swift-umbrella.h"
-
-  export *
-  module * { export * }
-}
