@@ -16,7 +16,7 @@ const config = {
   dev: {
     // Various Dev Server settings
     contentBase: ROOT,
-    host: ip,
+    host: '0.0.0.0',
     port: 8081,
     historyApiFallback: true,
     open: true,
