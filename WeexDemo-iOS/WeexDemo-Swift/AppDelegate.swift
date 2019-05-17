@@ -10,7 +10,7 @@ import UIKit
 import XWeexViewController
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate,WXViewControllerDelegate {
 
     var window: UIWindow?
 
@@ -18,41 +18,46 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         window = UIWindow(frame: UIScreen.main.bounds)
-        let indexJSURL = Bundle.main.url(forResource: "index", withExtension: "js")
-        if (indexJSURL != nil){
-            let wxVC = WXViewController(url: indexJSURL!)
+        
+        let fileURL = URL(string: "http://localhost:8081/dist/index.js");
+        if (fileURL != nil){
+            let wxVC = WXViewController(url: fileURL!)
+            wxVC.delegate = self
             let navController = UINavigationController(rootViewController: wxVC)
             window?.rootViewController = navController
         }
-        
         window?.makeKeyAndVisible()
 
         WXEngine.start()
         return true
     }
-
-    func applicationWillResignActive(_ application: UIApplication) {
-        // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-        // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
+    
+    func renderFailed(viewController: WXViewController, error: NSError) {
+        if (error.domain == WX_ERROR_DOMAIN){
+            let indexJSURL = Bundle.main.url(forResource: "index", withExtension: "js")
+            if (indexJSURL != nil){
+                viewController.url = indexJSURL
+                viewController.refresh()
+            }
+        }
     }
-
-    func applicationDidEnterBackground(_ application: UIApplication) {
-        // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-        // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+    
+    func renderOncreate(viewController: WXViewController, view: UIView) {
+        
     }
-
-    func applicationWillEnterForeground(_ application: UIApplication) {
-        // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
+    
+    func renderFinish(viewController: WXViewController, view: UIView) {
+        
     }
-
-    func applicationDidBecomeActive(_ application: UIApplication) {
-        // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    
+    func renderJSRuntimeException(viewController: WXViewController, jsException: WXJSExceptionInfo) {
+        
     }
-
-    func applicationWillTerminate(_ application: UIApplication) {
-        // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    
+    func stratRender(viewController: WXViewController, url: URL) {
+        
     }
-
+    
 
 }
 

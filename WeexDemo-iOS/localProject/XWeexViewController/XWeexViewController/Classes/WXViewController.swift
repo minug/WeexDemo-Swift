@@ -9,8 +9,8 @@
 import UIKit
 import WeexSDK
 
-protocol WXViewControllerDelegate:NSObjectProtocol{
-    func renderFailed(viewController:WXViewController,error:Error)
+public protocol WXViewControllerDelegate:NSObjectProtocol{
+    func renderFailed(viewController:WXViewController,error:NSError)
     func renderJSRuntimeException(viewController:WXViewController,jsException:WXJSExceptionInfo)
     func renderFinish(viewController:WXViewController,view:UIView)
     func renderOncreate(viewController:WXViewController,view:UIView)
@@ -20,8 +20,8 @@ protocol WXViewControllerDelegate:NSObjectProtocol{
 
 public class WXViewController: UIViewController {
     var instance : WXSDKInstance?
-    var url:URL?
-    weak var delegate:WXViewControllerDelegate?
+    public var url:URL?
+    public weak var delegate:WXViewControllerDelegate?
     
     public convenience init(url:URL) {
         self.init()
@@ -48,7 +48,7 @@ public class WXViewController: UIViewController {
         instance?.onFailed = {error in
             print(error ?? "")
             if (weakSelf?.delegate != nil && error != nil){
-                weakSelf?.delegate?.renderFailed(viewController: weakSelf!, error: error!);
+                weakSelf?.delegate?.renderFailed(viewController: weakSelf!, error: error! as NSError);
             }
         }
         instance?.onJSRuntimeException = { jsException in
@@ -63,7 +63,7 @@ public class WXViewController: UIViewController {
         delegate?.stratRender(viewController: self, url: url);
         instance?.render(with: url)
     }
-    @objc func refreshClick(item:UIBarButtonItem){
+    @objc public func refresh(){
         guard let u = url else {
             return
         }
@@ -73,7 +73,7 @@ public class WXViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = UIColor.white
         if (self.url != nil){
-            let navItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.refresh, target: self, action: #selector(refreshClick(item:)));
+            let navItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.refresh, target: self, action: #selector(refresh));
             navigationItem.rightBarButtonItem = navItem
             render(url: url!)
         }
